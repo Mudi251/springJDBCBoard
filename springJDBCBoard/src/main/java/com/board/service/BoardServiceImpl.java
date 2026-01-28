@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.board.dao.BoardDAO;
 import com.board.domain.Board;
+import com.board.domain.Member;
 
 @Service
 public class BoardServiceImpl implements BoardService {
@@ -48,5 +49,4 @@ public class BoardServiceImpl implements BoardService {
         List<Board> boardList = boardDAO.boardSearch(board);
         return boardList;
     }
-
 }

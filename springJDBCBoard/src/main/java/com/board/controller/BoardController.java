@@ -116,7 +116,6 @@ public class BoardController {
 		model.addAttribute("message", "%s 님의 정보가 수정이 되지 않았습니다.".formatted(b.getWriter()));
 		return "board/failed";
 	}
-	
 	@GetMapping("/search")
 	public String boardSearch(Board board, Model model) {
 		log.info("boardSearch board="+board.toString());
