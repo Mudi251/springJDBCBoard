@@ -137,7 +137,7 @@ body {
 
 	<div class="detail-container">
 		<div class="detail-header">
-			<span class="post-no">MISSION NO. ${board.no}</span>
+			<span class="post-no">게시판번호. ${board.no}</span>
 			<h1>${board.title}</h1>
 			<div class="post-info">
 				<span>WRITER: <b>${board.writer}</b></span> <span>DATE: <b><fmt:formatDate
@@ -148,17 +148,15 @@ body {
 		<div class="detail-content">${board.content}</div>
 
 		<div class="btn-area">
-			<a href="/board/boardList" class="btn btn-list">게시판리스트</a>
+			<a href="/board/boardList" class="btn btn-list">게시판 리스트</a>
 
 			<div class="btn-group">
 				<a href="/board/updateForm?no=${board.no}" class="btn btn-edit">수정하기</a>
 				<a href="/board/delete?no=${board.no}" class="btn btn-delete"
-					onclick="return confirm('정말 삭제하시겠습니까?')"> 삭제하기</a>
+					onclick="return confirm('정말 삭제하시겠습니까?')">삭제하기</a>
 			</div>
 		</div>
 
-		<div class="footer-deco">[ DATA ARCHIVE: T1 COMMUNITY SECURE
-			TERMINAL ]</div>
 	</div>
 
 </body>

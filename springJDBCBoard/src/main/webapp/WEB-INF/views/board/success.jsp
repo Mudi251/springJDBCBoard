@@ -4,103 +4,56 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>T1 Community | Write</title>
+<title>게시글 처리 결과</title>
 <style>
-/* T1 Official Theme */
-:root {
-	--t1-red: #E2012D;
-	--t1-black: #0f0f0f;
-	--t1-gray: #1a1a1a;
-	--t1-gold: #C69C6D;
+/* 기존 스타일 유지 */
+.container {
+	width: 500px;
+	margin: 20px auto;
+	text-align: center; /* 텍스트 중앙 정렬 추가 */
 }
 
-body {
-	background-color: var(--t1-black);
-	font-family: 'Pretendard', sans-serif;
-	color: #ffffff;
+.btn-area {
+	margin-top: 30px;
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	min-height: 100vh;
-	margin: 0;
+	gap: 10px; /* 버튼 사이 간격 */
 }
 
-.write-container {
-	width: 100%;
-	max-width: 700px;
-	background: var(--t1-gray);
-	padding: 40px;
-	border-radius: 15px;
-	border: 2px solid var(--t1-red);
-	box-shadow: 0 0 30px rgba(226, 1, 45, 0.2);
+/* 버튼 공통 스타일 */
+.btn {
+	padding: 10px 20px;
+	cursor: pointer;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	text-decoration: none; /* 링크 밑줄 제거 */
+	font-size: 14px;
+	display: inline-block;
 }
 
-.header {
-	text-align: center;
-	margin-bottom: 40px;
+.btn-primary {
+	background-color: #007bff;
+} /* 작성하러 가기 */
+.btn-secondary {
+	background-color: #6c757d;
+} /* 목록으로/취소 */
+.btn:hover {
+	opacity: 0.9;
 }
-
-.header h1 {
-	font-size: 2rem;
-	font-weight: 900;
-	letter-spacing: -1px;
-}
-
-.header span {
-	color: var(--t1-red);
-}
- /* Buttons */
-    .btn-area {
-        display: flex;
-        gap: 15px;
-        margin-top: 30px;
-    }
-
-    .btn {
-        flex: 1;
-        padding: 15px;
-        font-size: 1rem;
-        font-weight: bold;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: 0.3s;
-        text-transform: uppercase;
-    }
-
-    .btn-submit {
-        background: var(--t1-red);
-        color: #fff;
-    }
-
-    .btn-submit:hover {
-        background: #ff1a4a;
-        transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(226, 1, 45, 0.5);
-    }
-
-    .btn-cancel {
-        background: #333;
-        color: #bbb;
-    }
-
-    .btn-cancel:hover {
-        background: #444;
-        color: #fff;
-    }
-
 </style>
 </head>
 <body>
 
-	<div class="write-container">
-		<div class="header">
-			<h1>게시판 입력성공</h1>
+	<div class="container">
+		<h2>${message}</h2>
+		<p>작성하신 글이 정상적으로 등록되었습니다.</p>
+
+		<div class="btn-area">
+			<a href="/board/insertForm" class="btn btn-primary">다시 작성하기</a> <a
+				href="/board/boardList" class="btn btn-secondary">목록으로 이동</a>
 		</div>
-		 <div class="btn-area">
-           <a href="/board/insertForm"><button  class="btn">게시판등록</button></a>
-            <button  class="btn">게시판리스트</button>
-        </div>
 	</div>
+
 </body>
 </html>

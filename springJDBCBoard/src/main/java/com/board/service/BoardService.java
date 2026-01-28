@@ -9,4 +9,5 @@ public interface BoardService {
 	public int updateBoard(Board board) throws Exception; 
 	public int deleteBoard(Board board) throws Exception; 
 	public List<Board> boardList() throws Exception;
+	public List<Board> boardSearch(Board board) throws Exception;
 }

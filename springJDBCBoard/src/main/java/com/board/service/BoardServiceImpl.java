@@ -10,37 +10,43 @@ import com.board.domain.Board;
 
 @Service
 public class BoardServiceImpl implements BoardService {
-	@Autowired
-	private BoardDAO boardDAO;
-	
-	@Override
-	public int insertBoard(Board board) throws Exception {
-		int count = boardDAO.insertBoard(board);
-		return count;
-	}
+    @Autowired
+    private BoardDAO boardDAO;
 
-	@Override
-	public Board selectByNo(Board b) throws Exception {
-		Board board = boardDAO.selectByNo(b);
-		return board;
-	}
+    @Override
+    public int insertBoard(Board board) throws Exception {
+        int count = boardDAO.insertBoard(board);
+        return count;
+    }
 
-	@Override
-	public int updateBoard(Board board) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+    @Override
+    public Board selectByNo(Board b) throws Exception {
+        Board board = boardDAO.selectByNo(b);
+        return board;
+    }
 
-	@Override
-	public int deleteBoard(Board board) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+    @Override
+    public int updateBoard(Board board) throws Exception {
+        int count = boardDAO.updateBoard(board);
+        return count;
+    }
 
-	@Override
-	public List<Board> boardList() throws Exception {
-		List<Board> boardList = boardDAO.boardList();
-		return boardList;
-	}
+    @Override
+    public int deleteBoard(Board board) throws Exception {
+        int count = boardDAO.deleteBoard(board);
+        return count;
+    }
+
+    @Override
+    public List<Board> boardList() throws Exception {
+        List<Board> boardList = boardDAO.boardList();
+        return boardList;
+    }
+
+    @Override
+    public List<Board> boardSearch(Board board) throws Exception {
+        List<Board> boardList = boardDAO.boardSearch(board);
+        return boardList;
+    }
 
 }

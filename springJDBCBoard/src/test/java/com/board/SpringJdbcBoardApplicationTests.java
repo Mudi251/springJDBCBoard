@@ -8,6 +8,6 @@ class SpringJdbcBoardApplicationTests {
 
 	@Test
 	void contextLoads() {
+		
 	}
-
 }
