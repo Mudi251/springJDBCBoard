@@ -1,80 +1,92 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>게시글 작성</title>
+<title>회원 정보 수정</title>
+
 <style>
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #f5f6f7;
+}
+
 .container {
-	width: 500px;
-	margin: 20px auto;
+	width: 420px;
+	margin: 80px auto;
+	background: #fff;
+	padding: 30px;
+	border-radius: 8px;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.form-group {
-	margin-bottom: 15px;
+h2 {
+	text-align: center;
+	margin-bottom: 20px;
 }
 
-label {
-	display: block;
-	margin-bottom: 5px;
-	font-weight: bold;
-}
-
-input[type="text"], textarea {
+input {
 	width: 100%;
-	padding: 8px;
-	box-sizing: border-box;
+	padding: 10px;
+	margin-bottom: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
 }
 
-textarea {
-	height: 200px;
-	resize: vertical;
-}
-
-.btn-area {
-	text-align: right;
-}
-
-button {
-	padding: 10px 20px;
-	cursor: pointer;
-	background-color: #007bff;
-	color: white;
+button, .btn {
+	width: 100%;
+	padding: 10px;
+	margin-top: 8px;
 	border: none;
 	border-radius: 4px;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.btn-update {
+	background-color: #4a90e2;
+	color: white;
+}
+
+.btn-delete {
+	background-color: #e74c3c;
+	color: white;
+	text-align: center;
+	display: block;
+	text-decoration: none;
+}
+
+.btn-update:hover {
+	background-color: #357abd;
+}
+
+.btn-delete:hover {
+	background-color: #c0392b;
 }
 </style>
 </head>
+
 <body>
 	<div class="container">
-		<h2>${board.writer}님의게시글수정</h2>
-		<form action="/board/update" method="post">
-			<div class="form-group">
-				<label for="no">작성자번호</label> <input type="text" id="no" name="no"
-					value="${board.no}" readonly="readonly">
-			</div>
-			<div class="form-group">
-				<label for="title">제목</label> <input type="text" id="title"
-					name="title" value="${board.title}" required>
-			</div>
+		<h2>회원 정보 수정</h2>
 
-			<div class="form-group">
-				<label for="writer">작성자</label> <input type="text" id="writer"
-					name="writer" value="${board.writer}" readonly>
-			</div>
+		<form action="/member/update" method="post">
 
-			<div class="form-group">
-				<label for="content">내용</label>
-				<textarea id="content" name="content" required>${board.content}</textarea>
-			</div>
+			<input type="text" name="id" value="${member.id}" readonly>
+			<input type="text" name="pw" value="${member.pw}" required>
+			<input type="text" name="name" value="${member.name}" readonly>
+			<input type="text" name="phone" value="${member.phone}" required>
 
-			<div class="btn-area">
-				<button type="submit">수정등록하기</button>
-				<button type="reset" style="background-color: #6c757d;">수정취소</button>
-			</div>
+			<button type="submit" class="btn-update">수정하기</button>
 		</form>
+
+		<a href="/member/delete?id=${member.id}"
+		   class="btn btn-delete"
+		   onclick="return confirm('정말 삭제하시겠습니까?');">
+			회원 삭제
+		</a>
 	</div>
 </body>
 </html>
