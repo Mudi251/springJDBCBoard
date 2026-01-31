@@ -172,8 +172,6 @@
             <button type="reset" class="btn btn-cancel">게시판취소</button>
         </div>
     </form>
-
 </div>
-
 </body>
 </html>
